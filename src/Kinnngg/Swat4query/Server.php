@@ -169,12 +169,18 @@ class Server
                 '[b]', '[/b]',
                 '[i]', '[/i]',
                 '[u]', '[/u]',
+                '[B]', '[/B]',
+                '[I]', '[/I]',
+                '[U]', '[/U]',
     );
     /**
      * This array contains the main static bbcode's html
      * @var array $basic_html
      */
     $basic_html = array(
+                '<b>', '</b>',
+                '<i>', '</i>',
+                '<u>', '</u>',
                 '<b>', '</b>',
                 '<i>', '</i>',
                 '<u>', '</u>',
@@ -192,7 +198,7 @@ class Server
        * @var array $advanced_bbcode
        */
       $advanced_bbcode = array(
-                   '/\[c=([0-9a-fA-F]{6})\](.+)(\[\\c\])?/',
+                   '/\[c=([0-9a-fA-F]{6})\](.+)(\[\\c\])?/i',
       );
       /**
        * This array contains the advanced static bbcode's html
