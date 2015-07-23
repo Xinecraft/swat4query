@@ -1,6 +1,6 @@
-<?php namespace Kinnngg\Swat4query;
+<?php
 
-use Illuminate\Support\Collection;
+namespace Kinnngg\Swat4query;
 
 /**
 * The Server Class
@@ -26,12 +26,7 @@ class Server
 
   public function __toString()
   {
-    return $this->option->toJSON();
-  }
-
-  public function collection()
-  {
-    return $this->option;
+    return json_encode($this->option);
   }
 
   public function query($value=null)
@@ -134,9 +129,6 @@ class Server
      $_sorting[$_by]=$_sort * -1;
       $usortopt=($_sort==1)?"ASC":"DESC";
      @usort($this->option['players'],"self::SortPlayers_".$_by."_".$usortopt);
-
-
-     $this->option = new Collection($this->option);
 
   }
 
